@@ -11,40 +11,126 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/responsive-gs-12col.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
     </head>
     <body class="home">
+        <div id="overlay" class="container span_12">
+           <div class="container white_bg">
+               <div class="header-modal">
+                   INICIE SESIÓN
+
+                   <button class="btn btn-transparent"><i class="fa fa-times"></i></button>
+               </div>
+               <div class="row span_12">
+                   <div class="container span_11" id="modal-forms">
+                       <form action="" id="login" >
+                           <div class="row span_12">
+                                <h3>Para acceder a nuestro contenido tiene que estar identificado.</h3>    
+                           </div>
+                           <div class="row span_12">
+                                <input type="email" class="input" autocomplete="off" placeholder="Email" name="email-login" id="email-login">
+                           </div>
+                           <div class="row span_12">
+                                <input type="password" class="input" autocomplete="off" placeholder="Contraseña" name="pass-login" id="pass-login">
+                           </div>
+                           <div class="row span_12">
+                               <div class="col span_8">
+                                   <a href="#" class="trigger" data-form="forgot">¿Olvidó su contraseña?</a>
+                                   <h4>Si no tiene cuenta <a href="#" class="trigger" data-form="reg" >regístrese aquí</a></h4>
+                               </div>
+                               <div class="col span_4">
+                                   <input type="submit" value="Acceder" class="btn btn-standard btn-large btn-block">
+                               </div>
+                           </div>
+                       </form>
+
+                       <form action="" id="reg" class="visuallyhidden">
+                           <div class="row span_12">
+                                <h3>Regístrese para acceder a nuestros contenidos.</h3>    
+                           </div>
+                           <div class="row span_12">
+                               <input type="text" class="input" autocomplete="off" placeholder="Nombre completo" name="name-reg" id="name-reg">
+                           </div> 
+
+                           <div class="row span_12">
+                               <input type="tel" class="input" autocomplete="off" placeholder="Teléfono" name="phone-reg" id="phone-reg">
+                           </div> 
+
+                           <div class="row span_12">
+                               <input type="email" class="input" autocomplete="off" placeholder="Email" name="email-reg" id="email-reg">
+                           </div>
+
+                           <div class="row span_12">
+                               <input type="password" class="input" autocomplete="off" placeholder="Contraseña" name="pass-reg" id="pass-reg">
+                           </div>
+
+                           <div class="row span_12">
+                              <div class="col span_7">
+                                   <h4>¿Ya tiene cuenta? <a href="#" class="trigger" data-form="login" >Ingrese aquí</a></h4>
+                              </div>
+                              <div class="col span_5">
+                                  <input type="submit" value="Registro" class="btn btn-standard btn-large btn-block">
+                              </div>
+                           </div>  
+                       </form>
+                       
+                       <form action="" id="forgot" class="visuallyhidden" >
+                           <div class="row span_12">
+                                <h3>Escriba su dirección de correo y le enviaremos la contraseña a la brevedad.</h3>    
+                           </div>
+                           <div class="row span_12">
+                                <input type="email" class="input" autocomplete="off" placeholder="Email" name="email-forgot" id="email-forgot">
+                           </div>
+                           <div class="row span_12">
+                               <div class="col span_8">
+                                    <h4>Una vez que reciba el correo con la contraseña <a href="#" class="trigger" data-form="login" >ingrese aquí</a>.</h4>
+                               </div>
+                               <div class="col span_4">
+                                    <input type="submit" value="Enviar" class="btn btn-standard btn-large btn-block">
+                               </div>
+                           </div>
+
+                       </form>
+                   </div>
+               </div>
+           </div> 
+        </div> 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="container span_12">
-            <head class="container content">
-                <a href="#" class="logo">ABANTE</a>
-                <nav>
-                    <ul>
-                        <li><a href="#">NOSOTROS</a></li>
-                        <li><a href="#">SERVICIOS</a></li>
-                        <li><a href="#">CONTACTO</a></li>
-                        <li><a href="#">PUBLICACIONES</a></li>
-                        <li><a href="#">INICIAR SESIÓN</a></li>
-                    </ul>
-                </nav>
-            </head>
-            <section class="container span_12">
-                <div class="container content banner">
+            <header class="container span_12 site-header">
+                <div class="container content">
+                    <a href="#" class="logo">ABANTE</a>
+                    <nav class="site-nav">
+                        <ul class="menu">
+                            <li><a href="#about">NOSOTROS</a></li>
+                            <li><a href="#services">SERVICIOS</a></li>
+                            <li><a href="#contact">CONTACTO</a></li>
+                            <li><a href="articulos.php">PUBLICACIONES</a></li>
+                            <li><a href="#" class="btn btn-small btn-login">INICIAR SESIÓN</a></li>
+                            <li><a href="#" class="btn btn-small btn-logout">CERRAR SESIÓN</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <section class="container span_12 banner">
+                <div class="container content">
                    <div>
                     <h1>Entregamos servicios de consultoría y gestión de excelencia.</h1>
+                    <a href="#about" class="btn btn-standard btn-large">CONÓZCANOS</a>
                    </div> 
                 </div>
             </section>
 
             <!-- ACERCA DE -->
             <section class="container span_12 white_bg">
-                <div class="container content">
+                <div class="container content" id="about">
                     <h2>Somos Abante <span>Una empresa joven de experimentados consultores.</span></h2>
                     <div class="row span_12">
                         <div class="col span_6">
@@ -73,10 +159,22 @@
 
             <!-- SERVICIOS -->
             <section class="container span_12 yellow_bg">
-                <div class="container content">
-                    <ul>
+                <div class="container content" id="services">
+                    <ul class="menu">
                         <li>
+                           <hgroup>
+                               <h2>Servicio que se quiere potenciar.</h2>
+                               <h4>Hay más servicios, para nevegar entre los mismos hay que utilizar las flechas en los costados.</h4>
+                           </hgroup>
+                           <div class="row span_12">
+                               <div class="col span_5">
+                                   
+                               </div>
 
+                               <div class="col span_7">
+                                   
+                               </div>
+                           </div> 
                         </li>
                     </ul>
                 </div>
@@ -84,14 +182,60 @@
 
             <!-- CONTACTO -->
             <section class="container span_12 white_bg">
+                <div class="container content" id="contact">
+                    <h2>Conversemos</h2>
+                    <div class="row span_12">
+                        <div class="col span_6">
+                            <h3>Encuéntrenos en:</h3>
+                            <ul class="menu contact-data">
+                                <li>
+                                    <i class="fa fa-building-o"></i> 
+                                    <span>Nombre de la calle 1234, Comuna. <br> Santiago de Chile</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <span>+562 2123 45 67</span>
+                                </li>
+                                <li class="twt"><a href="#"><i class="fa fa-twitter-square"></i> @ElUsuario</a></li>
+                                <li class="fb"><a href="#"><i class="fa fa-facebook-square"></i> fb.com/elUsuario</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col span_6">
+                            <form action="">
+                                <div class="row span_12">
+                                    <input type="text" class="input" autocomplete="off" id="name" name="name" placeholder="Nombre Completo" required>
+                                </div>
 
+                                <div class="row span_12">
+                                    <input type="email" class="input" autocomplete="off" id="email" name="email" placeholder="Email" required>
+                                </div>
+
+                                <div class="row span_12">
+                                    <textarea name="msg" id="msg" cols="30" rows="10" class="input" autocomplete="off" placeholder="¿Cómo podemos ayudarle?"></textarea>
+                                </div>
+
+                                <input type="submit" value="enviar" class="btn btn-standard btn-large right">
+                            </form>
+                        </div>  
+                    </div>
+                </div>
             </section>
 
             <!-- MAPA -->
             <section class="container span_12 white_bg">
-
+                <div id="map_canvas"></div>
             </section>
-
+            
+            <!-- FOOTER -->
+            <footer class="container span_12">
+                <div class="content container">
+                    <a href="#" class="logo">ABANTE</a>
+                    <span>
+                        Prohibida la copia parcial o total del contenido de este sitio. Optimizado para navegadores modernos.
+                    </span>
+                </div>
+            </footer>
         </div>
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
